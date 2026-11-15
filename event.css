@@ -1,0 +1,811 @@
+@charset "UTF-8";
+@import url("./reset.css");
+
+@font-face {
+  font-family: 'NanumSquareNeoLight';
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-aLt.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: 'NanumSquareNeo';
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-bRg.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: 'NanumSquareNeoBold';
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-cBd.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: 'NanumSquareNeoExtraBold';
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: 'NanumSquareNeoHeavy';
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: 'NanumSquareNeoVariable';
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.eot);
+  src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: 'KCC-eunyoung';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/KCC-eunyoung-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 초기 세팅값 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  color: #222222;
+  /* outline: 1px solid red; */
+}
+
+body {
+  overflow-x: hidden;
+}
+
+a,
+input,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  text-decoration: none;
+  color: inherit;
+  font-family: 'NanumSquareNeo';
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+section {
+  margin-bottom: 200px !important;
+}
+
+.inner {
+  width: 1400px;
+}
+
+/* header */
+
+header {
+  font-size: 0;
+  width: 100%;
+  height: 130px;
+  position: fixed;
+  text-align: center;
+  z-index: 1;
+  transition: background-color 0.3s ease;
+}
+
+header.fixed_top {
+  position: fixed;
+  background: #222;
+  z-index: 99;
+  box-shadow: 0 5px 3px rgba(0, 0, 0, 0.1);
+}
+
+header.fixed_top .gnbbg {
+  background: #222;
+}
+
+#logo {
+  margin-left: 53px;
+  position: absolute;
+  top: 50%;
+  left: 50px;
+  transform: translateY(-50%);
+}
+
+#logo img {
+  width: 144px;
+  height: 35px;
+}
+
+nav {
+  display: inline-block;
+}
+
+.top_cate {
+  margin-left: 65px;
+  font-size: 0;
+  height: 350px;
+}
+
+.top_cate a {
+  color: #fff;
+}
+
+.top_cate .menu {
+  height: 30px;
+  margin-top: 53px;
+  display: inline-block;
+  position: relative;
+  width: 210px;
+}
+
+.top_cate .menu>a {
+  font-family: 'NanumSquareNeoBold';
+  font-size: 18px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.top_cate>.menu:last-child {
+  margin-right: 0px;
+}
+
+.top_cate .submenu {
+  margin-top: 20px;
+  opacity: 0;
+  overflow: hidden;
+  height: 0;
+  transition: all .4s;
+  width: 100%;
+  font-size: 16px;
+}
+
+.top_cate .submenu>li {
+  line-height: 40px;
+}
+
+
+.top_cate>li:hover {
+  border-bottom: 3px solid #137C08;
+}
+
+
+.top_cate>li:hover .submenu a:hover {
+  color: #137C08;
+  font-weight: bold;
+}
+
+.top_cate:hover .submenu {
+  opacity: 1;
+  height: 250px;
+}
+
+
+
+.top_cate .submenu>li:last-child {
+  margin-bottom: -20px;
+}
+
+.top_cate .submenu>a {
+  font-size: 16px;
+}
+
+
+.gnbbg {
+  width: 100%;
+  height: 0px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -10;
+  opacity: 0;
+  transition: all .25s;
+}
+
+.top_cate:hover~.gnbbg {
+  height: 350px;
+  opacity: 1;
+}
+
+
+.mypage {
+  margin-right: -138px;
+  position: absolute;
+  top: 50%;
+  right: 240px;
+  transform: translateY(-50%);
+  font-size: 0;
+}
+
+.mypage a,
+.mypage img {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.mypage a:first-child {
+  margin-right: 15px;
+}
+
+
+/*ul & li 추가*/
+ul {
+  font-size: 0;
+}
+
+li {
+  font-size: 16px;
+}
+
+
+#top_banner img {
+  width: 100%;
+}
+
+main>section>a {
+  border: 2px solid #137C08;
+  border-radius: 10px;
+}
+
+#cardnews {
+  width: 80%;
+  margin: -10vw auto 10vw;
+
+}
+
+#cardnews li {
+
+  width: 30%;
+  /* height: 75vh; */
+  font-size: 1rem;
+  display: inline-block;
+  margin: 0 5% 5% 0;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  vertical-align: top;
+  overflow: hidden;
+}
+
+#cardnews li:nth-child(3),
+#cardnews li:nth-child(6) {
+  margin-right: 0;
+}
+
+.cardnews_pic {
+  width: 100%;
+  height: 35vh;
+}
+
+
+#cardnews li:first-child .cardnews_pic {
+  background: url(./images/event1.png) center/100% no-repeat;
+}
+
+#cardnews li:nth-child(2) .cardnews_pic {
+  background: url(./images/event2.png) center/100% no-repeat;
+}
+
+#cardnews li:nth-child(3) .cardnews_pic {
+  background: url(./images/event3.png) center/100% no-repeat;
+}
+
+#cardnews li:nth-child(4) .cardnews_pic {
+  background: url(./images/event4.png) center/100% no-repeat;
+}
+
+#cardnews li:nth-child(5) .cardnews_pic {
+  background: url(./images/event5.png) center/100% no-repeat;
+}
+
+#cardnews li:nth-child(6) .cardnews_pic {
+  background: url(./images/event6.png) center/100% no-repeat;
+}
+
+
+.cardnews_txt {
+  padding: 0 5%;
+  text-align: center;
+}
+
+#cardnews h3 {
+  font-weight: bold;
+  font-size: 1.5vw;
+  margin: 1.5vw 0;
+  color: #137C08;
+  line-height: 2;
+}
+
+
+#cardnews p {
+  font-size: 1.3vw;
+  width: 100%;
+
+  line-height: 1.6;
+  word-break: keep-all;
+  font-weight: bold;
+}
+
+#cardnews .date {
+  font-size: 1vw;
+  color: #929292;
+  margin-top: 1vw;
+}
+
+#cardnews a {
+  padding: 0.8vw 2.2vw;
+  display: inline-block;
+  margin: 1.7vw 0 2.1vw;
+  background-color: #137C08;
+  color: #fff;
+  border-radius: 30px;
+}
+
+
+
+@media (max-width:1400px) {
+  #cardnews {
+    width: 90%;
+  }
+
+  #cardnews li {
+    width: 32%;
+    margin-right: 2%;
+  }
+
+  #cardnews h3 {
+    font-size: 1.7vw;
+
+  }
+
+  #cardnews p {
+    font-size: 1.5vw;
+  }
+
+  #cardnews .date {
+    font-size: 1.3vw;
+  }
+
+  #cardnews a {
+    font-size: 1.3vw;
+  }
+
+  #cardnews li:first-child .cardnews_pic {
+    background: url(./images/event1.png) center/cover no-repeat;
+  }
+
+  #cardnews li:nth-child(2) .cardnews_pic {
+    background: url(./images/event2.png) center/cover no-repeat;
+  }
+
+  #cardnews li:nth-child(3) .cardnews_pic {
+    background: url(./images/event3.png) center/cover no-repeat;
+  }
+
+  #cardnews li:nth-child(4) .cardnews_pic {
+    background: url(./images/event4.png) center/cover no-repeat;
+  }
+
+  #cardnews li:nth-child(5) .cardnews_pic {
+    background: url(./images/event5.png) center/cover no-repeat;
+  }
+
+  #cardnews li:nth-child(6) .cardnews_pic {
+    background: url(./images/event6.png) center/cover no-repeat;
+  }
+
+}
+
+/* footer */
+footer {
+  padding: 63px 172px 17px 172px;
+  background-color: #EBEBEB;
+}
+
+.f_logo {
+  filter: invert(75%) brightness(70%);
+  width: 15%;
+  margin-bottom: 30px;
+}
+
+.f_sns {
+  margin: -71px 0px;
+  float: right;
+}
+
+.f_sns img {
+  margin-right: 15px;
+  width: 37px;
+  height: 37px;
+}
+
+.f_info {
+  line-height: 2;
+  font-size: 18px;
+}
+
+.f_info span {
+  line-height: 6.2;
+}
+
+.f_menu {
+  margin: -60px 0px;
+  float: right;
+}
+
+.f_menu a {
+  margin-right: 20px;
+}
+
+.f_menu a:hover {
+  font-weight: bold;
+}
+
+.menu_btn {
+  display: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.menu_btn .bar {
+  width: 35px;
+  height: 5px;
+  background-color: #fff;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+
+
+/* mediaquery max-width: 768px */
+
+
+@media (max-width:768px) {
+  .default-text {
+    display: none;
+  }
+
+  .responsive-text {
+    display: block;
+  }
+
+  header {
+    width: 768px;
+    height: auto;
+    padding: 10px 0;
+  }
+
+  #logo {
+    scale: 129%;
+    margin: 2px 20px;
+  }
+
+  .menu_btn {
+    margin: 13px 35px;
+    float: right;
+    display: block;
+  }
+
+  .top_cate .submenu {
+    margin-top: 20px;
+    opacity: 1;
+    /* overflow: hidden; */
+    height: 250px;
+    transition: all .4s;
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .top_cate>li {
+    border-bottom: 3px solid #137C08;
+  }
+
+  nav {
+    display: none;
+  }
+
+  nav.openmenu {
+    height: 320px;
+    display: block;
+    position: absolute;
+    top: 90px;
+    /* 헤더 높이에 맞춰 조정 */
+    left: 0;
+    width: 100%;
+    background-color: #222;
+    z-index: 100;
+  }
+
+  .top_cate {
+    display: flex;
+    margin-left: 0;
+    /* display: block;
+    width: 100%;
+    text-align: center; */
+  }
+
+  .top_cate .menu {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .top_cate:hover~.gnbbg {
+    height: 320px;
+  }
+
+  .top_cate .submenu {
+    color: #222;
+  }
+
+  .top_cate>li:hover .submenu a:hover {
+    color: #1ada05;
+  }
+
+  .mypage {
+    display: block;
+  }
+
+
+
+
+  /* 메뉴 버튼 활성화 상태 스타일 */
+  .menu_btn.open .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+
+  .menu_btn.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu_btn.open .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+
+  #cardnews li {
+    width: 49%;
+    margin-right: 2%;
+  }
+
+  #cardnews li:nth-child(3) {
+    margin-right: 2%;
+  }
+
+  #cardnews li:nth-child(even) {
+    margin-right: 0;
+  }
+
+  #cardnews h3 {
+    font-size: 2.3vw;
+    margin: 2vw 0;
+  }
+
+  #cardnews p {
+    font-size: 2.1vw;
+  }
+
+  #cardnews .date {
+    font-size: 1.9vw;
+    margin-bottom: 1.5vw;
+  }
+
+  #cardnews a {
+    font-size: 1.9vw;
+    margin-bottom: 3vw;
+  }
+
+  /* footer */
+  footer {
+    padding: 60px
+  }
+
+  .f_logo img {
+    width: 15vh;
+  }
+
+  .f_sns img {
+    width: 4vh;
+    height: 4vh;
+  }
+
+  .f_info {
+    height: 34vh;
+  }
+
+  .f_info p {
+    font-size: 12px;
+    line-height: 2.2;
+    padding-bottom: 40px;
+  }
+
+  .f_info span {
+    font-size: 12px;
+    line-height: 200px;
+  }
+
+  .f_menu {
+    font-size: 12px;
+    float: left;
+    margin: -140px 0px
+  }
+}
+
+@media (max-width:600px) {
+  .cardnews_pic {
+    width: 100%;
+    height: 25vh;
+  }
+}
+
+@media (max-width:480px) {
+  header {
+    width: 480px;
+    height: auto;
+    padding: 10px 0;
+  }
+
+  #logo {
+    scale: 99%;
+    margin: -1px -26px;
+  }
+
+  .menu_btn {
+    margin: 13px 35px;
+    float: right;
+    display: block;
+  }
+
+  .top_cate .submenu {
+    margin-top: 20px;
+    opacity: 1;
+    height: 250px;
+    transition: all .4s;
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .top_cate>li {
+    border-bottom: 3px solid #137C08;
+  }
+
+  nav {
+    display: none;
+  }
+
+  nav.openmenu {
+    height: 320px;
+    display: block;
+    position: absolute;
+    top: 90px;
+    /* 헤더 높이에 맞춰 조정 */
+    left: 0;
+    width: 100%;
+    background-color: #222;
+    z-index: 100;
+  }
+
+  .top_cate {
+    display: flex;
+    margin-left: 0;
+    /* display: block;
+    width: 100%;
+    text-align: center; */
+  }
+
+  .top_cate .menu {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .top_cate:hover~.gnbbg {
+    height: 320px;
+  }
+
+  .top_cate .submenu {
+    color: #222;
+  }
+
+  .top_cate>li:hover .submenu a:hover {
+    color: #1ada05;
+  }
+
+  .mypage {
+    display: block;
+  }
+
+
+  /* 메뉴 버튼 활성화 상태 스타일 */
+  .menu_btn.open .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+
+  .menu_btn.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu_btn.open .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+
+
+
+  #cardnews li {
+    width: 100%;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    text-align: left;
+  }
+
+  #cardnews li>div {
+    width: 50%;
+    float: left;
+  }
+
+  .cardnews_pic {
+    border-radius: 20px;
+    height: 60vw;
+  }
+
+  .cardnews_txt {
+    text-align: left;
+    margin-top: 9vw;
+  }
+
+  #cardnews h3 {
+    font-size: 3.9vw;
+    margin: 2vw 0;
+    word-break: keep-all;
+  }
+
+  #cardnews p {
+    font-size: 3.1vw;
+    margin-bottom: 3vw;
+  }
+
+  #cardnews .date {
+    font-size: 2.1vw;
+    margin-bottom: 3vw;
+  }
+
+  #cardnews a {
+    font-size: 3.1vw;
+    margin-bottom: 3vw;
+    padding: 2vw 5vw;
+  }
+
+  footer {
+    width: 56vh;
+    padding: 30px;
+  }
+
+  .f_logo img {
+    width: 15vh;
+  }
+
+  .f_info {
+    height: 35vh;
+  }
+
+  .f_info span {
+    line-height: 68px;
+  }
+
+  .f_info p {
+    font-size: 13px;
+    line-height: 2.2;
+    padding: 10px 0 10px 0;
+  }
+
+  .f_menu {
+    margin: -19px 0px;
+  }
+
+}

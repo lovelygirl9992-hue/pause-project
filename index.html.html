@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pause</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./pause.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./pause.js"></script>
+</head>
+
+<body>
+    <header class="fixed_top">
+        <h1 id="logo"><a href="#"><img src="./images/logowhite.png" alt="pause로고"></a></h1>
+        <div class="menu_btn">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <nav>
+            <ul class="top_cate">
+                <li class="menu"><a href="#">기업소개</a>
+                    <ul class="submenu">
+                        <li><a href="#">기업소개</a></li>
+                        <li><a href="#">협업문의</a></li>
+                        <li><a href="#">창업문의</a></li>
+                    </ul>
+                </li>
+                <li class="menu"><a href="#">캠핑예약</a>
+                    <ul class="submenu">
+                        <li><a href="#">오토캠핑</a></li>
+                        <li><a href="#">카라반</a></li>
+                        <li><a href="#">글램핑</a></li>
+                        <li><a href="#">오지캠핑</a></li>
+                    </ul>
+                </li>
+                <li class="menu"><a href="#">캠핑상품</a>
+                    <ul class="submenu">
+                        <li><a href="#">텐트·타프</a></li>
+                        <li><a href="#">조리·발화용품</a></li>
+                        <li><a href="#">취침용품</a></li>
+                        <li><a href="#">레저용품</a></li>
+                        <li><a href="#">기타</a></li>
+                    </ul>
+                </li>
+                <li class="menu"><a href="#">캠핑정보</a>
+                    <ul class="submenu">
+                        <li><a href="#">신규 캠핑장</a></li>
+                        <li><a href="#">행사 안내</a></li>
+                        <li><a href="#">캠핑 팁</a></li>
+                        <li><a href="#">캠핑 푸드</a></li>
+                    </ul>
+                </li>
+                <li class="menu"><a href="#">커뮤니티</a>
+                    <ul class="submenu">
+                        <li><a href="#">캠핑 리뷰</a></li>
+                        <li><a href="#">자유게시판</a></li>
+                        <li><a href="#">포즈장터</a></li>
+                        <li><a href="#">고객센터</a></li>
+                        <li><a href="https://ecimg.cafe24img.com/pg1074b88148741035/mdng/team_pause/team_event.html">이벤트</a></li>
+                    </ul>
+                </li>
+            </ul> <!-- .top_cate -->
+            <div class="gnbbg"></div>
+        </nav>
+        <div class="mypage">
+            <a href="#"><img src="./images/mypageicon.png" alt="mypage"></a>
+            <a href="#"><img src="./images/basketicon.png" alt="장바구니"></a>
+        </div>
+    </header> <!-- //header -->
+    <main>
+        <section class="mainview">
+            <div class="maintxt">
+                <h2><span>바쁜 일상은 잠시 정지,</span>
+                    <img src="./images/logowhite.png" alt="포즈">에서 휴식을 취해보세요!
+                </h2>
+                <div class="mainsearch">
+                    <input type="text" id="#text" placeholder="원하시는 지역을 검색해주세요">
+                    <button type="button" class="button"><img src="./images/searchicon.png" alt="검색버튼"></button>
+                    <a href="#">&#35;전주</a>
+                    <a href="#">&#35;부산</a>
+                    <a href="#">&#35;대전</a>
+                    <a href="#">&#35;서울</a>
+                    <a href="#">&#35;경주</a>
+                </div> <!-- .mainsearch -->
+            </div> <!-- .maintxt -->
+        </section> <!-- .mainview -->
+        <section class="allaboutbanner inner">
+            <div class="place_wrap">
+                <div class="allaboutplace">
+                    <img src="./images/aboutplacepic.png" alt="캠핑장 예약 배너 사진">
+                    <p>&#35;All_about_<span>PLACE</span></p>
+                </div> <!-- .allaboutplace -->
+                <div class="placetextbox">
+                    <h2><span>캠핑 · 글램핑 · 카라반<br></span>다양한 캠핑을 즐겨보세요!</h2>
+                    <p>지역별 새로운 캠핑장과 추천 캠핑장까지!</p>
+                    <a href="#">바로예약하기</a>
+                </div> <!--.placetextbox-->
+            </div>
+            <div class="camping_wrap">
+                <div class="allaboutcamping">
+                    <img src="./images/aboutcampingpic.jpg" alt="캠핑카와 장비 대여 예약 배너 사진">
+                    <p>&#35;All_about_<span>CAMPING</span></p>
+                </div> <!--.allaboutcamping-->
+                <div class="campingtextbox">
+                    <h2><span>캠핑카 · 장비 대여<br></span>편하게 캠핑을 즐겨보세요!</h2>
+                    <p>자유롭게 이동하고 장비대여까지 편하게!</p>
+                    <a href="#">바로예약하기</a>
+                </div> <!--.campingtextbox-->
+            </div>
+
+        </section> <!--.allaboutbanner-->
+        <section class="product clearfix">
+            <h2>&#35;캠핑용품</h2>
+            <div class="tent">
+                <div class="tent_text">
+                    <h3><a href="#">텐트 / 타프<img src="./images/arrow.png" alt="바로가기 아이콘"></a></h3>
+                    <p>자연 속의 나만의 공간, 최상의 텐트 컬렉션!</p>
+                </div>
+            </div>
+            <div class="chair">
+                <div class="ch_text">
+                    <h3><a href="#">캠핑가구<img src="./images/arrow.png" alt="바로가기 아이콘"></a></h3>
+                    <p>좋은 캠핑 가구 하나면,<br>자연 속에서도<br>집처럼 편안해요!</p>
+                </div>
+            </div>
+
+
+            <div class="pot">
+                <div class="pot_text">
+                    <h3><a href="#">키친<img src="./images/arrow.png" alt="바로가기 아이콘"></a></h3>
+                    <p>캠핑의 맛을 더해줄 편한 키친 도구 세트!</p>
+                </div>
+            </div>
+
+
+            <div class="mat">
+                <div class="mat_text">
+                    <h3><a href="#">침낭 / 매트<img src="./images/arrow.png" alt="바로가기 아이콘"></a></h3>
+                    <p class="default-text">캠핑의 밤을 더욱 편안하게,<br>최고의 침낭과 매트로 준비하세요</p>
+                    <p class="responsive-text">캠핑의 밤을 더욱 편안하게!</p>
+                </div>
+            </div>
+
+
+
+            <div class="flashlight">
+                <div class="fl_text">
+                    <h3><a href="#">랜턴<img src="./images/arrow.png" alt="바로가기 아이콘"></a></h3>
+                    <p class="default-text">안전하고 따뜻한 캠핑의 밤, 캠핑 랜턴과 함께하세요!</p>
+                    <p class="responsive-text">따뜻한 캠핑의 밤, 캠핑 랜턴과 함께</p>
+                </div>
+            </div>
+        </section> <!--.product-->
+        <section class="event">
+            <div class="eventleft">
+                <img src="./images/logogreen.png" alt="pause로고">
+                <h1>EVENT</h1>
+                <p><span>PAUSE</span>에서 다양한 혜택과
+                    이벤트를 만나보세요!</p>
+                <div class="eventbtn">
+                    <a href="https://ecimg.cafe24img.com/pg1074b88148741035/mdng/team_pause/team_event.html">자세히 보기</p>
+                </div>
+                <div class="eventbtn_m">
+                    <a href="https://ecimg.cafe24img.com/pg1074b88148741035/mdng/team_pause/team_event.html">자세히 보기</p>
+                </div>
+            </div>
+            <div class="swiper eventbanner">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide eventbanner1"><a href="#"></a></div>
+                    <div class="swiper-slide eventbanner2"><a href="#"></a></div>
+                    <div class="swiper-slide eventbanner3"><a href="#"></a></div>
+                    <div class="swiper-slide eventbanner4"><a href="#"></a></div>
+                    <div class="swiper-slide eventbanner5"><a href="#"></a></div>
+                    <div class="swiper-slide eventbanner6"><a href="#"></a></div>
+                </div>
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </section> <!--.event-->
+        <section class="information clearfix">
+            <div class="inner">
+                <div class="info_left">
+                        <h3>캠핑의 시작은
+                            <span><img src="./images/logowh_big.png" alt="포즈">
+                                와 함께!</span>
+                        </h3>
+                    <a href="#">캠핑정보<img src="./images/in_arrow.png" alt="오른쪽 화살표">
+                    </a>
+                    <a href="#">커뮤니티<img src="./images/in_arrow.png" alt="오른쪽 화살표">
+                    </a>
+                </div>
+                <div class="info_right">
+                    <!-- <img src="./images/line.png" alt="구분 선 이미지"> -->
+                    <div class="tiptab">
+                        <a href="#">
+                            <img src="./images/tip-wh.png" alt="캠핑 팁 이미지">
+                            <p>캠핑 팁</p>
+                        </a>
+                    </div>
+                    <div class="reviewtab">
+                        <a href="#">
+                            <img src="./images/review-wh.png" alt="캠핑 리뷰 이미지">
+                            <p>캠핑 리뷰</p>
+                        </a>
+                    </div>
+                    <div class="foodtab">
+                        <a href="#">
+                            <img src="./images/food-wh.png" alt="캠핑 푸드 이미지">
+                            <p>캠핑 푸드</p>
+                        </a>
+                    </div>
+                    <div class="boardtab">
+                        <a href="#">
+                            <img src="./images/board-wh.png" alt="자유게시판 이미지">
+                            <p>자유게시판</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section> <!--.information-->
+    </main>
+    <footer>
+        <h1 class="f_logo">
+            <a href="#">
+                <img src="./images/logoblack.png" alt="포즈 로고">
+            </a>
+        </h1>
+        <div class="f_sns">
+            <a href="#"><img src="./images/katalkicon.png" alt="카카오톡 이미지"></a>
+            <a href="#"><img src="./images/instaicon.png" alt="인스타그램 이미지"></a>
+        </div>
+        <div class="f_info">
+            <p>
+                주식회사 PAUSE | 대표이사 : 이다은 | 사업자등록번호 : 324-555-1122<br>
+                주소 : 전북특별자치도 전주시 완산구 천잠로 303<br>
+                국내 여행업 : 2024-000001호 | 통신판매 : 2024-전북-03434 | 자동차 대여사업 : 전주시 2024-01호<br>
+                대표전화 : 063-333-3333 | 고객센터 : 070-1111-3444 | 팩스 : 0504-123-0456 | 이메일 : PAUSE@pause.com
+            </p>
+            <span>Copyright &copy; PAUSE. All Rights Reserved.</span>
+        </div>
+        <div class="f_menu">
+            <a href="#">개인정보취급방침</a>
+            <a href="#">홈페이지 이용약관</a>
+            <a href="#">광고 및 제휴문의</a>
+            <a href="#">고객센터</a>
+        </div>
+    </footer> <!--.footer-->
+</body>
+
+</html>
